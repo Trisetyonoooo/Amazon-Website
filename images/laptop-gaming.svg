@@ -1,0 +1,39 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <rect width="200" height="200" fill="#f5f5f5"/>
+  
+  <!-- Laptop body -->
+  <rect x="20" y="40" width="160" height="90" rx="5" fill="#2c3e50"/>
+  
+  <!-- Screen -->
+  <rect x="30" y="50" width="140" height="70" fill="#34495e"/>
+  
+  <!-- Screen shine/reflection -->
+  <rect x="35" y="55" width="130" height="20" fill="#3d5a73" opacity="0.6"/>
+  
+  <!-- Keyboard -->
+  <rect x="20" y="130" width="160" height="20" fill="#34495e"/>
+  
+  <!-- Keyboard keys pattern -->
+  <g stroke="#1a252f" stroke-width="1" fill="none">
+    <line x1="30" y1="135" x2="30" y2="145"/>
+    <line x1="45" y1="135" x2="45" y2="145"/>
+    <line x1="60" y1="135" x2="60" y2="145"/>
+    <line x1="75" y1="135" x2="75" y2="145"/>
+    <line x1="90" y1="135" x2="90" y2="145"/>
+    <line x1="105" y1="135" x2="105" y2="145"/>
+    <line x1="120" y1="135" x2="120" y2="145"/>
+    <line x1="135" y1="135" x2="135" y2="145"/>
+    <line x1="150" y1="135" x2="150" y2="145"/>
+    <line x1="165" y1="135" x2="165" y2="145"/>
+  </g>
+  
+  <!-- Trackpad -->
+  <rect x="80" y="152" width="40" height="12" fill="#1a252f" rx="2"/>
+  
+  <!-- Hinge detail -->
+  <line x1="20" y1="130" x2="180" y2="130" stroke="#1a252f" stroke-width="2"/>
+  
+  <!-- Logo -->
+  <circle cx="100" cy="65" r="8" fill="#FF9900"/>
+  <text x="100" y="70" text-anchor="middle" font-size="12" fill="white" font-weight="bold">G</text>
+</svg>

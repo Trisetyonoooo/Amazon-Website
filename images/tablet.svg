@@ -1,0 +1,52 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <rect width="200" height="200" fill="#f5f5f5"/>
+  
+  <!-- Tablet body -->
+  <rect x="30" y="30" width="140" height="140" rx="8" fill="#2c3e50"/>
+  
+  <!-- Tablet border -->
+  <rect x="32" y="32" width="136" height="136" rx="7" fill="none" stroke="#444" stroke-width="1"/>
+  
+  <!-- Screen -->
+  <rect x="40" y="40" width="120" height="120" rx="5" fill="#1a1a1a"/>
+  
+  <!-- Screen content - colorful apps grid -->
+  <defs>
+    <linearGradient id="appGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF6B6B;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FF8E72;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="appGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4ECDC4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#44B8AA;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="appGradient3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFE66D;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFD93D;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="appGradient4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#95E1D3;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#78D4D0;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- App icons - 2x2 grid -->
+  <rect x="48" y="48" width="24" height="24" fill="url(#appGradient1)" rx="4"/>
+  <rect x="80" y="48" width="24" height="24" fill="url(#appGradient2)" rx="4"/>
+  <rect x="48" y="80" width="24" height="24" fill="url(#appGradient3)" rx="4"/>
+  <rect x="80" y="80" width="24" height="24" fill="url(#appGradient4)" rx="4"/>
+  
+  <!-- Screen status bar -->
+  <rect x="40" y="40" width="120" height="6" fill="#333"/>
+  <text x="45" y="44" font-size="4" fill="#999">9:41</text>
+  
+  <!-- Home indicator (bottom) -->
+  <rect x="95" y="150" width="10" height="2" fill="#666" rx="1"/>
+  
+  <!-- Camera notch -->
+  <rect x="98" y="38" width="4" height="3" fill="#0a0a0a" rx="1"/>
+  
+  <!-- Volume buttons (right side) -->
+  <rect x="168" y="60" width="3" height="8" fill="#555"/>
+  <rect x="168" y="75" width="3" height="8" fill="#555"/>
+</svg>
