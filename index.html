@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Indonesia - Belanja Online Terpercaya</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-logo">
+                <a href="index.html">
+                    <span class="logo-text">amazon</span>
+                </a>
+            </div>
+            
+            <div class="search-bar">
+                <select class="category-select">
+                    <option value="">Semua Kategori</option>
+                    <option value="elektronik">Elektronik</option>
+                    <option value="fashion">Fashion</option>
+                    <option value="rumah">Rumah & Taman</option>
+                    <option value="buku">Buku</option>
+                    <option value="makanan">Makanan & Minuman</option>
+                </select>
+                <input type="text" class="search-input" placeholder="Cari produk...">
+                <button class="search-btn">Cari</button>
+            </div>
+
+            <div class="navbar-right">
+                <div class="account-section">
+                    <span class="greeting">Halo, Masuk</span>
+                    <span class="account-text">Akun & Login</span>
+                </div>
+                <div class="returns-section">
+                    <span class="returns-text">Pengembalian</span>
+                    <span class="orders-text">& Pesanan</span>
+                </div>
+                <div class="cart-section">
+                    <span class="cart-icon">🛒</span>
+                    <span class="cart-count">0</span>
+                    <span class="cart-text">Keranjang</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Category Bar -->
+        <div class="category-bar">
+            <div class="category-container">
+                <span class="category-item">Semua</span>
+                <span class="category-item">Promo Hari Ini</span>
+                <span class="category-item">Elektronik</span>
+                <span class="category-item">Fashion</span>
+                <span class="category-item">Rumah & Taman</span>
+                <span class="category-item">Olahraga & Outdoor</span>
+                <span class="category-item">Mainan & Game</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Banner -->
+    <section class="hero">
+        <div class="hero-banner">
+            <img src="images/hero-banner.svg" alt="Hero Banner">
+        </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section class="featured-section">
+        <div class="featured-container">
+            <h2 class="section-title">Produk Pilihan Hari Ini</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="prime-badge">PRIME</div>
+                    <div class="product-image">
+                        <img src="images/laptop-gaming.svg" alt="Laptop">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Laptop Gaming Pro</h3>
+                        <p class="product-brand">Brand: TechBrand</p>
+                        <div class="product-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="review-count">(324)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="discount">-25%</span>
+                            <span class="current-price">Rp 12.999.000</span>
+                        </div>
+                        <p class="original-price">Rp 17.300.000</p>
+                        <button class="add-cart-btn" onclick="addToCart('Laptop Gaming Pro', 12999000)">Tambah ke Keranjang</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="prime-badge">PRIME</div>
+                    <div class="product-image">
+                        <img src="images/smartphone.svg" alt="Smartphone">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Smartphone Ultra 5G</h3>
+                        <p class="product-brand">Brand: PhoneCorp</p>
+                        <div class="product-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span class="review-count">(512)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="discount">-30%</span>
+                            <span class="current-price">Rp 5.999.000</span>
+                        </div>
+                        <p class="original-price">Rp 8.599.000</p>
+                        <button class="add-cart-btn" onclick="addToCart('Smartphone Ultra 5G', 5999000)">Tambah ke Keranjang</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="prime-badge">PRIME</div>
+                    <div class="product-image">
+                        <img src="images/headphone.svg" alt="Headphone">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Headphone Wireless Pro</h3>
+                        <p class="product-brand">Brand: AudioMax</p>
+                        <div class="product-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="review-count">(689)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="discount">-40%</span>
+                            <span class="current-price">Rp 1.299.000</span>
+                        </div>
+                        <p class="original-price">Rp 2.199.000</p>
+                        <button class="add-cart-btn" onclick="addToCart('Headphone Wireless Pro', 1299000)">Tambah ke Keranjang</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/smartwatch.svg" alt="Smartwatch">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Smartwatch Fitness</h3>
+                        <p class="product-brand">Brand: WatchTech</p>
+                        <div class="product-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span class="review-count">(145)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="discount">-35%</span>
+                            <span class="current-price">Rp 1.899.000</span>
+                        </div>
+                        <p class="original-price">Rp 2.900.000</p>
+                        <button class="add-cart-btn" onclick="addToCart('Smartwatch Fitness', 1899000)">Tambah ke Keranjang</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="prime-badge">PRIME</div>
+                    <div class="product-image">
+                        <img src="images/camera.svg" alt="Kamera">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Kamera Digital Mirrorless</h3>
+                        <p class="product-brand">Brand: SnapPro</p>
+                        <div class="product-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="review-count">(278)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="discount">-20%</span>
+                            <span class="current-price">Rp 8.499.000</span>
+                        </div>
+                        <p class="original-price">Rp 10.599.000</p>
+                        <button class="add-cart-btn" onclick="addToCart('Kamera Digital Mirrorless', 8499000)">Tambah ke Keranjang</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="prime-badge">PRIME</div>
+                    <div class="product-image">
+                        <img src="images/tablet.svg" alt="Tablet">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Tablet 10 Inch</h3>
+                        <p class="product-brand">Brand: TabletWorld</p>
+                        <div class="product-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span class="review-count">(421)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="discount">-28%</span>
+                            <span class="current-price">Rp 3.499.000</span>
+                        </div>
+                        <p class="original-price">Rp 4.899.000</p>
+                        <button class="add-cart-btn" onclick="addToCart('Tablet 10 Inch', 3499000)">Tambah ke Keranjang</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!-- Special Offers Section -->
+    <section class="special-offers">
+        <div class="offers-container">
+            <h2 class="section-title">Penawaran Spesial</h2>
+            <div class="offers-grid">
+                <div class="offer-card">
+                    <h3>Elektronik</h3>
+                    <p class="offer-discount">Diskon hingga 50%</p>
+                    <a href="#">Lihat Penawaran →</a>
+                </div>
+                <div class="offer-card">
+                    <h3>Fashion</h3>
+                    <p class="offer-discount">Beli 2 Gratis 1</p>
+                    <a href="#">Lihat Penawaran →</a>
+                </div>
+                <div class="offer-card">
+                    <h3>Rumah & Taman</h3>
+                    <p class="offer-discount">Diskon hingga 40%</p>
+                    <a href="#">Lihat Penawaran →</a>
+                </div>
+                <div class="offer-card">
+                    <h3>Olahraga</h3>
+                    <p class="offer-discount">Diskon hingga 35%</p>
+                    <a href="#">Lihat Penawaran →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Best Sellers Section -->
+    <section class="featured-section" style="background-color: #f8f9fa;">
+        <div class="featured-container">
+            <h2 class="section-title">✨ Best Sellers Minggu Ini</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="prime-badge">PRIME</div>
+                    <div class="product-image">
+                        <img src="images/headphone.svg" alt="Headphone">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Headphone Wireless Pro</h3>
+                        <p class="product-brand">Brand: AudioMax</p>
+                        <div class="product-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="review-count">(2.1K)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="discount">-40%</span>
+                            <span class="current-price">Rp 1.299.000</span>
+                        </div>
+                        <p class="original-price">Rp 2.199.000</p>
+                        <button class="add-cart-btn" onclick="addToCart('Headphone Wireless Pro', 1299000)">Tambah ke Keranjang</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="prime-badge">PRIME</div>
+                    <div class="product-image">
+                        <img src="images/smartphone.svg" alt="Smartphone">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Smartphone Ultra 5G</h3>
+                        <p class="product-brand">Brand: PhoneCorp</p>
+                        <div class="product-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="review-count">(1.8K)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="discount">-30%</span>
+                            <span class="current-price">Rp 5.999.000</span>
+                        </div>
+                        <p class="original-price">Rp 8.599.000</p>
+                        <button class="add-cart-btn" onclick="addToCart('Smartphone Ultra 5G', 5999000)">Tambah ke Keranjang</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/tablet.svg" alt="Tablet">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Tablet 10 Inch</h3>
+                        <p class="product-brand">Brand: TabletWorld</p>
+                        <div class="product-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span class="review-count">(956)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="discount">-28%</span>
+                            <span class="current-price">Rp 3.499.000</span>
+                        </div>
+                        <p class="original-price">Rp 4.899.000</p>
+                        <button class="add-cart-btn" onclick="addToCart('Tablet 10 Inch', 3499000)">Tambah ke Keranjang</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="prime-badge">PRIME</div>
+                    <div class="product-image">
+                        <img src="images/camera.svg" alt="Kamera">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Kamera Digital Mirrorless</h3>
+                        <p class="product-brand">Brand: SnapPro</p>
+                        <div class="product-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="review-count">(743)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="discount">-20%</span>
+                            <span class="current-price">Rp 8.499.000</span>
+                        </div>
+                        <p class="original-price">Rp 10.599.000</p>
+                        <button class="add-cart-btn" onclick="addToCart('Kamera Digital Mirrorless', 8499000)">Tambah ke Keranjang</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/smartwatch.svg" alt="Smartwatch">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Smartwatch Fitness</h3>
+                        <p class="product-brand">Brand: WatchTech</p>
+                        <div class="product-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="review-count">(512)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="discount">-35%</span>
+                            <span class="current-price">Rp 1.899.000</span>
+                        </div>
+                        <p class="original-price">Rp 2.900.000</p>
+                        <button class="add-cart-btn" onclick="addToCart('Smartwatch Fitness', 1899000)">Tambah ke Keranjang</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="prime-badge">PRIME</div>
+                    <div class="product-image">
+                        <img src="images/laptop-gaming.svg" alt="Laptop">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Laptop Gaming Pro</h3>
+                        <p class="product-brand">Brand: TechBrand</p>
+                        <div class="product-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="review-count">(654)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="discount">-25%</span>
+                            <span class="current-price">Rp 12.999.000</span>
+                        </div>
+                        <p class="original-price">Rp 17.300.000</p>
+                        <button class="add-cart-btn" onclick="addToCart('Laptop Gaming Pro', 12999000)">Tambah ke Keranjang</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Tentang Kami</h4>
+                <ul>
+                    <li><a href="#">Tentang Amazon</a></li>
+                    <li><a href="#">Karir</a></li>
+                    <li><a href="#">Pers</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Hubungi Kami</h4>
+                <ul>
+                    <li><a href="#">Customer Service</a></li>
+                    <li><a href="#">Hubungi Amazon</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Kebijakan</h4>
+                <ul>
+                    <li><a href="#">Syarat & Ketentuan</a></li>
+                    <li><a href="#">Kebijakan Privasi</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Bantuan</h4>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Status Pesanan</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Amazon Indonesia. Semua Hak Dilindungi.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

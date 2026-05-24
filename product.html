@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Produk - Laptop Gaming Pro</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .product-detail-container {
+            max-width: 1400px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-detail {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .product-image-section {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .main-image {
+            width: 100%;
+            height: 500px;
+            background-color: #f5f5f5;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .main-image img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .thumbnail-images {
+            display: flex;
+            gap: 10px;
+        }
+
+        .thumbnail {
+            width: 80px;
+            height: 80px;
+            background-color: #f5f5f5;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .thumbnail:hover {
+            border-color: #FF9900;
+        }
+
+        .product-details-section {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .product-title {
+            font-size: 28px;
+            font-weight: bold;
+            color: #131921;
+        }
+
+        .product-rating-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .rating {
+            font-size: 18px;
+            color: #FFA500;;
+        }
+
+        .review-link {
+            color: #0066cc;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .review-link:hover {
+            text-decoration: underline;
+        }
+
+        .price-section {
+            padding: 15px;
+            background-color: #f5f5f5;
+            border-radius: 8px;
+        }
+
+        .current-price-large {
+            font-size: 32px;
+            font-weight: bold;
+            color: #B12704;
+            margin-bottom: 10px;
+        }
+
+        .original-price-large {
+            font-size: 18px;
+            color: #999;
+            text-decoration: line-through;
+            margin-bottom: 10px;
+        }
+
+        .discount-info {
+            color: #B12704;
+            font-weight: bold;
+        }
+
+        .availability {
+            padding: 15px;
+            background-color: #f0f8f0;
+            border-left: 4px solid #4CAF50;
+            border-radius: 4px;
+        }
+
+        .availability.available {
+            color: #4CAF50;
+        }
+
+        .availability.stock-warning {
+            background-color: #fff3cd;
+            border-left-color: #FFA500;
+            color: #FF8C00;
+        }
+
+        .quantity-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .quantity-selector {
+            display: flex;
+            align-items: center;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: white;
+        }
+
+        .quantity-btn {
+            width: 40px;
+            height: 40px;
+            border: none;
+            background-color: white;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s;
+        }
+
+        .quantity-btn:hover {
+            background-color: #f0f0f0;
+        }
+
+        .quantity-input {
+            width: 60px;
+            border: none;
+            text-align: center;
+            font-size: 16px;
+            padding: 8px 0;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .add-to-cart-large,
+        .buy-now {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .add-to-cart-large {
+            background-color: #FF9900;
+            color: black;
+        }
+
+        .add-to-cart-large:hover {
+            background-color: #e88d00;
+        }
+
+        .buy-now {
+            background-color: #FFA724;
+            color: black;
+        }
+
+        .buy-now:hover {
+            background-color: #ff9500;
+        }
+
+        .features-section {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+        }
+
+        .features-section h3 {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .features-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 10px;
+        }
+
+        .feature-icon {
+            font-size: 20px;
+            color: #FF9900;
+        }
+
+        .reviews-section {
+            margin-top: 40px;
+            border-top: 1px solid #ddd;
+            padding-top: 30px;
+        }
+
+        .reviews-section h3 {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .review {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 15px;
+        }
+
+        .review-author {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .review-text {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .product-detail {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+            }
+
+            .features-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar (sama seperti index.html) -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-logo">
+                <a href="index.html">
+                    <span class="logo-text">amazon</span>
+                </a>
+            </div>
+            
+            <div class="search-bar">
+                <select class="category-select">
+                    <option value="">Semua Kategori</option>
+                    <option value="elektronik">Elektronik</option>
+                    <option value="fashion">Fashion</option>
+                    <option value="rumah">Rumah & Taman</option>
+                    <option value="buku">Buku</option>
+                    <option value="makanan">Makanan & Minuman</option>
+                </select>
+                <input type="text" class="search-input" placeholder="Cari produk...">
+                <button class="search-btn">Cari</button>
+            </div>
+
+            <div class="navbar-right">
+                <div class="account-section">
+                    <span class="greeting">Halo, Masuk</span>
+                    <span class="account-text">Akun & Login</span>
+                </div>
+                <div class="returns-section">
+                    <span class="returns-text">Pengembalian</span>
+                    <span class="orders-text">& Pesanan</span>
+                </div>
+                <div class="cart-section">
+                    <span class="cart-icon">🛒</span>
+                    <span class="cart-count">0</span>
+                    <span class="cart-text">Keranjang</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Product Detail Container -->
+    <div class="product-detail-container">
+        <div class="product-detail">
+            <!-- Gambar Produk -->
+            <div class="product-image-section">
+                <div class="main-image">
+                    <img src="images/laptop-gaming.svg" alt="Laptop Gaming Pro">
+                </div>
+                <div class="thumbnail-images">
+                    <div class="thumbnail">
+                        <img src="images/laptop-gaming.svg" alt="View 1">
+                    </div>
+                    <div class="thumbnail">
+                        <img src="images/laptop-gaming.svg" alt="View 2">
+                    </div>
+                    <div class="thumbnail">
+                        <img src="images/laptop-gaming.svg" alt="View 3">
+                    </div>
+                    <div class="thumbnail">
+                        <img src="images/laptop-gaming.svg" alt="View 4">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detail Produk -->
+            <div class="product-details-section">
+                <h1 class="product-title">Laptop Gaming Pro - RTX 4060 | 16GB RAM | 1TB SSD</h1>
+
+                <div class="product-rating-section">
+                    <span class="rating">★★★★★ 4.5/5</span>
+                    <span class="review-link">(1,247 Ulasan Pelanggan)</span>
+                </div>
+
+                <!-- Harga -->
+                <div class="price-section">
+                    <div class="discount-info">Hemat 25% dengan cicilan 0%</div>
+                    <div class="original-price-large">Harga Sebelumnya: Rp 17.300.000</div>
+                    <div class="current-price-large">Rp 12.999.000</div>
+                    <p style="color: #666;">Harga mungkin bervariasi berdasarkan warna dan ukuran</p>
+                </div>
+
+                <!-- Ketersediaan -->
+                <div class="availability available">
+                    ✓ Stok Tersedia - Dikirim dalam 1-2 hari kerja
+                </div>
+
+                <!-- Quantity Selector -->
+                <div class="quantity-section">
+                    <label for="quantity" style="font-weight: bold;">Jumlah:</label>
+                    <div class="quantity-selector">
+                        <button class="quantity-btn" onclick="decreaseQuantity()">-</button>
+                        <input type="number" id="quantity" class="quantity-input" value="1" min="1">
+                        <button class="quantity-btn" onclick="increaseQuantity()">+</button>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="action-buttons">
+                    <button class="add-to-cart-large" onclick="addProductToCart()">Tambah ke Keranjang</button>
+                    <button class="buy-now" onclick="buyNow()">Beli Sekarang</button>
+                </div>
+
+                <!-- Informasi Tambahan -->
+                <div style="background-color: #f0f8ff; padding: 15px; border-radius: 4px; margin-top: 10px;">
+                    <p>✓ Garansi Resmi 2 Tahun</p>
+                    <p>✓ Gratis Ongkos Kirim ke Seluruh Indonesia</p>
+                    <p>✓ 30 Hari Uang Kembali</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Features Section -->
+        <div class="features-section">
+            <h3>Spesifikasi Produk</h3>
+            <div class="features-list">
+                <div class="feature-item">
+                    <span class="feature-icon">🎮</span>
+                    <div>
+                        <strong>Prosesor</strong>
+                        <p>Intel Core i7-13700H (14 core, hingga 5.0 GHz)</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">💾</span>
+                    <div>
+                        <strong>RAM</strong>
+                        <p>16GB DDR5 3200MHz (Upgradeable hingga 32GB)</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">💿</span>
+                    <div>
+                        <strong>Penyimpanan</strong>
+                        <p>1TB SSD NVMe PCIe 4.0 (Very Fast)</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">📺</span>
+                    <div>
+                        <strong>Display</strong>
+                        <p>15.6" IPS FHD 165Hz (1920x1200)</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">🎨</span>
+                    <div>
+                        <strong>Kartu Grafis</strong>
+                        <p>NVIDIA RTX 4060 dengan 8GB GDDR6</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">🔋</span>
+                    <div>
+                        <strong>Baterai</strong>
+                        <p>52.5Wh - Tahan hingga 8 jam</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">⚖️</span>
+                    <div>
+                        <strong>Berat</strong>
+                        <p>2.5 kg (relatif ringan untuk gaming laptop)</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">🔧</span>
+                    <div>
+                        <strong>Port</strong>
+                        <p>USB-C 3.1 x2, USB-A 3.1 x2, HDMI, Audio Jack</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Reviews Section -->
+        <div class="reviews-section">
+            <h3>Ulasan Pelanggan</h3>
+            
+            <div class="review">
+                <div class="review-author">⭐⭐⭐⭐⭐ Budi S.</div>
+                <p class="review-text">
+                    "Laptop ini sangat powerful! Saya menggunakannya untuk gaming dan video editing. 
+                    Performa sangat memuaskan dan build quality-nya excellent. Highly recommended!"
+                </p>
+            </div>
+
+            <div class="review">
+                <div class="review-author">⭐⭐⭐⭐⭐ Siti R.</div>
+                <p class="review-text">
+                    "Pengiriman cepat, packaging rapi. Laptop dalam kondisi sempurna. 
+                    Layarnya jernih dan gaming experience-nya luar biasa. Terima kasih!"
+                </p>
+            </div>
+
+            <div class="review">
+                <div class="review-author">⭐⭐⭐⭐☆ Ahmad T.</div>
+                <p class="review-text">
+                    "Good laptop for the price. Performa gaming OK, tapi agak panas saat gaming berat. 
+                    Tapi secara keseluruhan worth it untuk budget gaming laptop."
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Tentang Kami</h4>
+                <ul>
+                    <li><a href="#">Tentang Amazon</a></li>
+                    <li><a href="#">Karir</a></li>
+                    <li><a href="#">Pers</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Hubungi Kami</h4>
+                <ul>
+                    <li><a href="#">Customer Service</a></li>
+                    <li><a href="#">Hubungi Amazon</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Kebijakan</h4>
+                <ul>
+                    <li><a href="#">Syarat & Ketentuan</a></li>
+                    <li><a href="#">Kebijakan Privasi</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Bantuan</h4>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Status Pesanan</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Amazon Indonesia. Semua Hak Dilindungi.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Product Detail Page Script
+        function decreaseQuantity() {
+            const input = document.getElementById('quantity');
+            if (input.value > 1) {
+                input.value = parseInt(input.value) - 1;
+            }
+        }
+
+        function increaseQuantity() {
+            const input = document.getElementById('quantity');
+            input.value = parseInt(input.value) + 1;
+        }
+
+        function addProductToCart() {
+            const quantity = document.getElementById('quantity').value;
+            addToCart('Laptop Gaming Pro - RTX 4060', 12999000);
+        }
+
+        function buyNow() {
+            addToCart('Laptop Gaming Pro - RTX 4060', 12999000);
+            setTimeout(() => {
+                openCart();
+            }, 300);
+        }
+    </script>
+</body>
+</html>
